@@ -1,12 +1,9 @@
-#!/bin/sh
-#
+#!/bin/sh -xe
+exec 2>&1
 
+# change to code path
 cd {{pkg.svc_var_path}}
 
-echo $(ls)
-
-source  venv/bin/activate
-echo $(pip freeze)
-exec venv/bin/python app.py 2>&1
-
+# execute gunicorn from venv
+exec venv/bin/gunicorn --workers={{cfg.number_of_workers}} app:app --bind {{cfg.bind_host}}:{{cfg.bind_port}}
 

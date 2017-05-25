@@ -1,5 +1,6 @@
-#!/bin/sh
-#
+#!/bin/sh -xe
+exec 2>&1
 
+ln -sf {{pkg.path}}/config {{pkg.svc_var_path}}
 ln -sf {{pkg.path}}/venv   {{pkg.svc_var_path}}
 ln -sf {{pkg.path}}/app.py {{pkg.svc_var_path}}
