@@ -5,7 +5,7 @@
 hab pkg build .
 
 # install result
-# note: jveiga is my pkg_name, yours will probably be different ;)
+# note: jveiga is my pkg_origin, yours will probably be different ;)
 hab install results/jveiga-mytutorialapp-0.0.1-20170525145213-x86_64-linux.hart
 
 # run as is
